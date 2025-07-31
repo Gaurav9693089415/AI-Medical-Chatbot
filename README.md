@@ -83,4 +83,3 @@ This project is distributed under the MIT License.
 
 ---
 
-Let me know if you'd like to include evaluation metrics or Hugging Face deployment instructions later.
