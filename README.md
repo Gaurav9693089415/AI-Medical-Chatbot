@@ -1,18 +1,19 @@
 
-
 ---
-# Medical Question Answering using Fine-Tuned DeepSeek R1
+
+#  Medical Question Answering using Fine-Tuned DeepSeek R1
 
 This project leverages a fine-tuned version of **DeepSeek R1 (8B)** for clinical reasoning and medical question answering. Fine-tuning was performed using **Unsloth** with **LoRA adapters**, allowing for fast, memory-efficient training on domain-specific data.
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 * **Base Model**: [`deepseek-ai/DeepSeek-R1-Distill-Llama-8B`](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-8B)
 * **Fine-Tuning Framework**: [Unsloth](https://github.com/unslothai/unsloth) (LoRA + PEFT + TRL)
 * **Dataset Used**: [`FreedomIntelligence/medical-o1-reasoning-SFT`](https://huggingface.co/datasets/FreedomIntelligence/medical-o1-reasoning-SFT)
 * **Training Environment**: Google Colab (CUDA-enabled)
+* **Notebook**: [Google Colab Notebook](https://colab.research.google.com/drive/19dm0b5fTdzA5FugzdRNO0GC_ezWg19a3#scrollTo=p3p-Cgzk8-te)
 * **Model Checkpoints**: [Google Drive](https://drive.google.com/file/d/1Xvmi_sRtL7cMeZojqxtrpfts2mWjZdqF/view?usp=drive_link)
 
 ---
@@ -121,3 +122,4 @@ This project is released under the MIT License.
 
 ---
 
+✅ Let me know if you want the **resume bullet point** now.
