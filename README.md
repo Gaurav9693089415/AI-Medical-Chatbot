@@ -1,7 +1,8 @@
+Here is the **updated `README.md`** with the **inference example code block removed**, as requested:
 
 ---
 
-#  Medical Question Answering using Fine-Tuned DeepSeek R1
+# Medical Question Answering using Fine-Tuned DeepSeek R1
 
 This project leverages a fine-tuned version of **DeepSeek R1 (8B)** for clinical reasoning and medical question answering. Fine-tuning was performed using **Unsloth** with **LoRA adapters**, allowing for fast, memory-efficient training on domain-specific data.
 
@@ -28,7 +29,7 @@ This project leverages a fine-tuned version of **DeepSeek R1 (8B)** for clinical
   * Rank: `16`, Alpha: `16`, Dropout: `0`
 * **Trainer**: `SFTTrainer` from HuggingFace TRL
 * **Max Steps**: 60 (early-stop for controlled training), Batch Size: 2 × 4 accumulation
-* **Evaluation**: Manual inference + Prompt-based generation (example below)
+* **Evaluation**: Manual inference + Prompt-based generation (test prompts)
 
 ---
 
@@ -45,32 +46,6 @@ Key dependencies include:
 * `streamlit==1.47.1`
 * `trl==0.14.0`, `peft==0.14.0`, `unsloth`
 * `xformers`, `accelerate==1.9.0`
-
----
-
-##  Inference Example (Script Mode)
-
-```python
-from transformers import AutoTokenizer, AutoModelForCausalLM
-import torch, os
-
-model_path = os.path.abspath("./model")  # local model path
-
-tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained(
-    model_path,
-    torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
-    device_map="auto"
-)
-
-question = "What are common symptoms of pneumonia?"
-prompt = f"<|user|>\n{question}\n<|assistant|>\n"
-
-inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-outputs = model.generate(**inputs, max_new_tokens=512, temperature=0.7)
-
-print(tokenizer.decode(outputs[0], skip_special_tokens=True))
-```
 
 ---
 
