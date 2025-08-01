@@ -122,4 +122,3 @@ This project is released under the MIT License.
 
 ---
 
-✅ Let me know if you want the **resume bullet point** now.
